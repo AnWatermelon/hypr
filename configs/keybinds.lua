@@ -1,8 +1,4 @@
 -- keybinds.lua
--- Converted from keybinds.conf to Hyprland 0.55+ Lua syntax
---
--- NOTE: $terminal, $fileManager, and $menu were variables defined elsewhere
--- in your old config. Define them here (or require them from another file).
 
 local mainMod     = "SUPER"                         -- "Windows" key as main modifier
 local terminal    = "kitty"                         -- replace with your terminal

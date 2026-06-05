@@ -1,9 +1,4 @@
 -- looknfeel.lua
--- Converted from looknfeel.conf to Hyprland 0.55+ Lua syntax
---
--- NOTE: $outline and $outline_variant were variables defined elsewhere in your
--- old config (likely a colors/theme file). Replace these string values with
--- your actual colour literals, e.g. "rgba(33ccffee)" / "rgba(595959aa)".
 
 hl.config({
   general = {

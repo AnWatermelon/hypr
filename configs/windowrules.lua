@@ -1,5 +1,4 @@
 -- windowrules.lua
--- Converted from windowrules.conf to Hyprland 0.55+ Lua syntax
 
 --------------------------
 -- APPLICATION BLUR/OPACITY
