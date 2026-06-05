@@ -1,9 +1,9 @@
 -- keybinds.lua
 
-local mainMod     = "SUPER"                         -- "Windows" key as main modifier
-local terminal    = "kitty"                         -- replace with your terminal
+local mainMod = "SUPER" -- "Windows" key as main modifier
+local terminal = "kitty" -- replace with your terminal
 local fileManager = "kitty --hold -e zsh -i -c 'y'" -- replace with your file manager
-local ipc         = "noctalia msg"
+local ipc = "noctalia msg"
 
 -- ─────────────────────────────────────────────
 --  Basic application launchers
@@ -15,7 +15,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Super_L", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))           -- dwindle
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle
 hl.bind(mainMod .. " + R", hl.dsp.exec_raw(ipc .. " config-reload"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd('xdg-open "https://"')) -- default browser
 hl.bind(mainMod .. " + L", hl.dsp.exec_raw(ipc .. " screen-lock"))
@@ -26,6 +26,7 @@ hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_raw("sh ~/.config/hypr/scripts/Ki
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprpicker -a"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " panel-open clipboard"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(ipc .. " panel-open control-center"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(ipc .. " settings-toggle"))
 
 -- ─────────────────────────────────────────────
 --  Focus movement (arrow keys)
@@ -55,7 +56,7 @@ hl.bind(mainMod .. " + CTRL + down", hl.dsp.window.resize({ x = 0, y = 50, relat
 --  Workspace switching (mainMod + 1-0)
 -- ─────────────────────────────────────────────
 for i = 1, 9 do
-  hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
 end
 hl.bind(mainMod .. " + 0", hl.dsp.focus({ workspace = 10 }))
 
@@ -63,7 +64,7 @@ hl.bind(mainMod .. " + 0", hl.dsp.focus({ workspace = 10 }))
 --  Move window to workspace (mainMod + SHIFT + 1-0)
 -- ─────────────────────────────────────────────
 for i = 1, 9 do
-  hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 end
 hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
