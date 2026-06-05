@@ -1,24 +1,25 @@
 -- keybinds.lua
 
-local mainMod = "SUPER" -- "Windows" key as main modifier
-local terminal = "kitty" -- replace with your terminal
-local fileManager = "kitty --hold -e zsh -i -c 'y'" -- replace with your file manager
+local mainMod = "SUPER"
+local terminal = "kitty"
+local fileManager = "kitty --hold -e zsh -i -c 'y'"
 local ipc = "noctalia msg"
+local browser = "zen-browser"
 
 -- ─────────────────────────────────────────────
 --  Basic application launchers
 -- ─────────────────────────────────────────────
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind("CTRL + ALT + Delete", hl.dsp.exit()) -- exit Hyprland
+hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Super_L", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_raw(ipc .. " config-reload"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd('xdg-open "https://"')) -- default browser
-hl.bind(mainMod .. " + L", hl.dsp.exec_raw(ipc .. " screen-lock"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. " screen-lock"))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_raw(ipc .. " screenshot-region"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(ipc .. " panel-toggle wallpaper"))
@@ -37,7 +38,7 @@ hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "d" }))
 
 -- ─────────────────────────────────────────────
---  Window movement (CTRL + arrow keys)
+--  Window movement (SHIFT + arrow keys)
 -- ─────────────────────────────────────────────
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
@@ -45,7 +46,7 @@ hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
 hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
 
 -- ─────────────────────────────────────────────
---  Window resize (SHIFT + arrow keys, repeating)
+--  Window resize (CTRL + arrow keys, repeating)
 -- ─────────────────────────────────────────────
 hl.bind(mainMod .. " + CTRL + left", hl.dsp.window.resize({ x = -50, y = 0, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = 50, y = 0, relative = true }), { repeating = true })
