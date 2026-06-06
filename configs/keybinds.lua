@@ -11,7 +11,7 @@ local browser = "zen-browser"
 -- ─────────────────────────────────────────────
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd(ipc .. " panel-toggle session"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + Super_L", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"))
