@@ -126,4 +126,4 @@ require("configs/input")
 require("configs/keybinds")
 
 -- For Noctalia Color templates
-require("noctalia")
+require("noctalia").apply_theme()
